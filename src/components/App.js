@@ -3,7 +3,7 @@ import SearchBar from './SearchBar';
 import youtube from '../apis/youtube';
 import VideoList from './VideoList';
 class App extends Component {
-  state = { videos: [] };
+  state = { videos: [], selectedVideo: null };
 
   onTermSubmit = async term => {
     const opts = {
@@ -16,11 +16,19 @@ class App extends Component {
 
     console.log('state', this.state.videos);
   };
+
+  onVideoSelect = video => {
+    //
+    console.log('From the app', video);
+  };
   render() {
     return (
       <div>
         <SearchBar onFormSubmit={this.onTermSubmit} />
-        <VideoList videos={this.state.videos} />
+        <VideoList
+          videos={this.state.videos}
+          onVideoSelect={this.onVideoSelect}
+        />
       </div>
     );
   }
