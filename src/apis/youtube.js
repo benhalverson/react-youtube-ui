@@ -1,10 +1,11 @@
 import axios from 'axios';
-
+const KEY = 'AIzaSyBAbTF3CJTzzVZGqYkWdTP-la4mmn5xBxc';
+//KEY is restricted in google dev console.
 export default axios.create({
   baseURL: 'https://www.googleapis.com/youtube/v3',
   params: {
     part: 'snippet',
-    maxResults: 5
-  },
-  key: process.env.YOUTUBE_API
+    maxResults: 5,
+    key: KEY
+  }
 });
