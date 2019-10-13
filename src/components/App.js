@@ -41,7 +41,7 @@ class App extends Component {
   }
 
   componentDidMount () {
-    this.submitSearch()
+    this.submitSearch(this.state.searchTerm)
   }
 
   render() {
