@@ -20,7 +20,7 @@ describe('Component: VideoItem', () => {
     }
     const wrapper = Enzyme.shallow(<VideoItem video={ video } />)
 
-    expect(wrapper.render()).toMatchSnapshot();
+    expect(wrapper.debug()).toMatchSnapshot();
   });
 
   test('should trigger event on select', () => {

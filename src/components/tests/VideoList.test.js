@@ -53,7 +53,7 @@ describe('Component: VideoList', () => {
   test('should render', () => {
     const wrapper = Enzyme.shallow(<VideoList videos={ videos } />)
 
-    expect(wrapper.render()).toMatchSnapshot();
+    expect(wrapper.debug()).toMatchSnapshot();
   });
 
   test('should filter non-video', () => {
