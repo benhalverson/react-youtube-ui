@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Component: VideoItem should render 1`] = `
+"<div className=\\"video-item item\\" onClick={[Function: onClick]}>
+  <img className=\\"ui image\\" src=\\"imageurl.jpg\\" alt=\\"Hello world\\" />
+  <div className=\\"content\\">
+    <div className=\\"header\\">
+      Hello world
+    </div>
+  </div>
+</div>"
+`;

@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Component: VideoList should render 1`] = `
+"<div className=\\"ui relaxed divided list\\">
+  <VideoItem video={{...}} onVideoSelect={[undefined]} />
+  <VideoItem video={{...}} onVideoSelect={[undefined]} />
+  <VideoItem video={{...}} onVideoSelect={[undefined]} />
+</div>"
+`;
