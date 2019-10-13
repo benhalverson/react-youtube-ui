@@ -4,20 +4,18 @@ import youtube from '../apis/youtube';
 import VideoList from './VideoList';
 import VideoDetail from './VideoDetail';
 class App extends Component {
-  state = { videos: [], selectedVideo: null };
+  state = {
+    searchTerm: 'coding music',
+    videos: [],
+    selectedVideo: null
+  };
 
-  onTermSubmit = async term => {
-    const response = await youtube
-      .get('/search', {
-        params: {
-          q: term
-        }
-      })
-      .catch(e => console.log('API Failed ', e));
+  onFormSubmit = searchTerm => {
     this.setState({
-      videos: response.data.items,
-      selectedVideo: response.data.items[0]
-    });
+      ...this.state,
+      searchTerm
+    })
+    this.submitSearch(searchTerm)
   };
 
   onVideoSelect = video => {
@@ -25,15 +23,32 @@ class App extends Component {
     this.setState({ selectedVideo: video });
   };
 
-  componentDidMount() {
-    this.onTermSubmit('coding music');
+  submitSearch = async (searchTerm) => {
+    try {
+      const response = await youtube
+        .get('/search', {
+          params: {
+            q: searchTerm
+          }
+        })
+      this.setState({
+        videos: response.data.items,
+        selectedVideo: response.data.items[0]
+      });
+    } catch (e) {
+      console.log('API Failed ', e)
+    }
+  }
+
+  componentDidMount () {
+    this.submitSearch()
   }
 
   render() {
     return (
       <div className="ui container">
         <div className="ui row">
-          <SearchBar onFormSubmit={this.onTermSubmit} />
+          <SearchBar term={ this.state.searchTerm } onFormSubmit={this.onFormSubmit} />
 
           <div className="eleven wide column">
             <VideoDetail video={this.state.selectedVideo} />
