@@ -30,7 +30,7 @@
     "not op_mini all"
   ],
   "devDependencies": {
-    "@testing-library/cypress": "5.3.1",
+    "@testing-library/cypress": "7.0.3",
     "cypress": "3.8.3",
     "enzyme": "3.10.0",
     "enzyme-adapter-react-16": "1.15.1",
