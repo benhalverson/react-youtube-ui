@@ -31,7 +31,7 @@
   ],
   "devDependencies": {
     "@testing-library/cypress": "5.3.1",
-    "cypress": "3.8.3",
+    "cypress": "6.4.0",
     "enzyme": "3.10.0",
     "enzyme-adapter-react-16": "1.15.6",
     "eslint-plugin-cypress": "2.11.2"
